@@ -1,0 +1,183 @@
+/* Ensure zero margins everywhere, especially on the body and html tags */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling caused by images hitting edges */
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #0b0f33;
+  color: #ffffff;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Use a variable for consistent text padding/margin from the edge */
+:root {
+  --text-padding: 20px; /* Default padding for mobile */
+}
+
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; 
+  width: 100%;
+  max-width: 1400px;
+}
+
+/* 
+  Header section: Padded internally but container is 100% width
+*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; 
+  padding: 0 var(--text-padding); 
+}
+
+.logo {
+  width: clamp(50px, 10vw, 80px); /* Responsive image sizing */
+  height: auto;
+  border-radius: 50%;
+}
+
+.club-name {
+  font-size: clamp(14px, 4vw, 24px); /* Fluid text size */
+  font-weight: 500; 
+  line-height: 1.2;
+  text-align: right;
+  color: #ffffff;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); 
+}
+
+/* 
+  Main Content Layout 
+*/
+.content-row {
+  display: flex;
+  flex-direction: column; /* Stacks vertically on mobile */
+  gap: 32px;
+  width: 100%;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; 
+  width: 100%;
+}
+
+/* Text content uses our variable for consistent internal padding */
+.text-content {
+  padding: 0 var(--text-padding); 
+}
+
+.hero-text {
+  font-size: clamp(24px, 6vw, 48px); /* Fluid text size */
+  font-weight: 700; 
+  line-height: 1.3;
+}
+
+.location-text, .date-text {
+  font-size: clamp(16px, 3vw, 20px); /* Fluid text size */
+  color: #a0a0a0;
+}
+
+.location-text { margin-top: 15px; }
+
+
+/* 
+  Image Specific Styling: Enforce block display and 0 margins 
+*/
+.nebula-image, .telescope-image, .cosmic-image {
+  display: block; /* CRUCIAL: removes default inline spacing issues */
+  margin: 0;
+  padding: 0;
+  object-fit: cover; 
+}
+
+.nebula-image {
+  width: clamp(120px, 20vw, 300px); /* Responsive sizing */
+  height: auto;
+  margin-left: var(--text-padding); /* Align with text on mobile */
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-end; /* Pushes images to the right edge */
+  width: 100%; /* Takes full width on mobile */
+  padding-right: var(--text-padding); /* Images reach edge, but gap kept consistent */
+}
+
+.telescope-image {
+  width: clamp(120px, 20vw, 280px);
+  height: auto; 
+}
+
+.cosmic-image {
+  width: clamp(150px, 30vw, 350px); 
+  height: auto;
+}
+
+/* Interactive states */
+.logo:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 
+  Desktop Layout (768px and up): Switch to two columns and edge-to-edge images 
+*/
+@media (min-width: 768px) {
+  /* Increase padding variable for desktop text alignment */
+  :root {
+    --text-padding: 60px; 
+  }
+  
+  .content-row {
+    flex-direction: row; /* Side-by-side layout */
+    align-items: flex-start; /* Align top of columns */
+    gap: 50px;
+  }
+
+  .left-content, .right-content {
+    /* Reset padding/margins in these containers to allow full-width usage */
+    padding: 0;
+    margin: 0;
+  }
+
+  .left-content {
+    width: 65%;
+  }
+  
+  .right-content {
+    width: 35%;
+  }
+
+  .text-content {
+    /* Now text padding aligns with the new variable */
+     padding-left: var(--text-padding);
+     padding-right: var(--text-padding);
+  }
+  
+  .nebula-image {
+    /* Pushes image to the far left edge of the screen */
+    margin-left: 0; 
+  }
+
+  .right-content {
+    /* Pushes images to the far right edge of the screen */
+    padding-right: 0;
+  }
+}
