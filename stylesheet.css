@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;600;700&family=Montaga&display=swap");
+
+/* Font Family Utilities */
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-montaga {
+  font-family: 'Montaga', serif;
+}
+
+/* Text Shadow Effects */
+.text-shadow-glow {
+  text-shadow: 0px 0px 22.32px #ffffff;
+}
+
+/* Glow Effect for Container */
+.glow-effect {
+  box-shadow: 
+    0px 0px 59.4px #ffffff,
+    0px 0px 118.8px #ffffff,
+    0px 0px 250px #ffffff,
+    0px 0px 250px #ffffff,
+    0px 0px 250px #ffffff,
+    0px 0px 250px #ffffff;
+}
+
+/* Animation Keyframes */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fade-in 1s ease forwards;
+}
+
+/* Animation Delay Utilities */
+.animation-delay-0 {
+  animation-delay: 0ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+/* Responsive adjustments (optional) */
+@media (max-width: 1939px) {
+  main {
+    min-width: 100vw;
+  }
+}

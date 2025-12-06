@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starry Verse - Location & Date</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;600;700&family=Montaga&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <main class="bg-[#0b0f33] overflow-hidden w-full min-w-[1939px] min-h-[1150px] relative">
+      <!-- Decorative Image - Bottom Right -->
+      <img
+        class="absolute top-[686px] left-[1483px] w-[456px] h-[464px] object-cover"
+        alt="Decorative frame"
+        src="c:\Users\HP\Downloads\Frame 33680.png"
+      />
+
+      <!-- Decorative Image - Top Right -->
+      <img
+        class="absolute top-[300px] left-[1503px] w-[238px] h-[321px] object-cover"
+        alt="Decorative frame"
+        src="https://c.animaapp.com/miux0to5c0u75I/img/frame-33685.png"
+      />
+
+      <!-- Club Name -->
+      <div class="absolute top-[54px] left-[1699px] w-[248px] text-shadow-glow font-inter font-normal text-white text-3xl tracking-[0] leading-[normal] opacity-0 animate-fade-in animation-delay-600">
+        Club d'astronomie <br />
+        de l'ESI
+      </div>
+
+      <!-- Logo -->
+      <img
+        class="absolute top-[39px] left-[42px] w-[100px] h-20 opacity-0 animate-fade-in animation-delay-0"
+        alt="Logo"
+        src="https://c.animaapp.com/miux0to5c0u75I/img/logo-1.png"
+      />
+
+      <!-- Main Heading -->
+      <h1 class="absolute top-[167px] left-[132px] font-montserrat font-bold text-white text-5xl tracking-[2.40px] leading-[75px] whitespace-nowrap opacity-0 translate-y-[-1rem] animate-fade-in animation-delay-200">
+        Location &amp; Date
+      </h1>
+
+      <!-- Divider Line -->
+      <img
+        class="absolute top-[239px] left-[132px] w-[438px] h-[3px] opacity-0 animate-fade-in animation-delay-300"
+        alt="Divider line"
+        src="https://c.animaapp.com/miux0to5c0u75I/img/line-13.svg"
+      />
+
+      <!-- Description Text -->
+      <div class="inline-flex items-center justify-center gap-4 absolute top-[284px] left-[132px] opacity-0 translate-y-[-1rem] animate-fade-in animation-delay-400">
+        <p class="relative w-[1090px] mt-[-1.00px] font-montserrat font-normal text-white text-[46px] tracking-[2.30px] leading-[75px]">
+          <span class="tracking-[1.06px]">
+            Reach for the stars with us at Starry Verse—an evening of
+            telescopes, moonlit skies, and cosmic wonder awaits!
+          </span>
+          <span class="font-montaga text-[50px] tracking-[1.25px]">🌙</span>
+          <span class="font-inter text-[50px] tracking-[1.25px]">✨</span>
+        </p>
+      </div>
+
+      <!-- Location Section -->
+      <div class="absolute top-[595px] left-[132px] w-[60px] h-[60px] text-white opacity-0 animate-fade-in animation-delay-600">
+        <i data-lucide="map-pin" class="w-full h-full"></i>
+      </div>
+
+      <div class="absolute top-[591px] left-[211px] w-[1021px] font-montserrat font-normal text-white text-[46px] tracking-[2.30px] leading-[75px] opacity-0 animate-fade-in animation-delay-600">
+        <span class="font-semibold tracking-[1.06px]">Location</span>
+        <span class="tracking-[1.06px]"> : Higher School of Computer Science</span>
+      </div>
+
+      <!-- Date Section -->
+      <div class="absolute top-[757px] left-[139px] w-[60px] h-[60px] text-white opacity-0 animate-fade-in animation-delay-800">
+        <i data-lucide="calendar" class="w-full h-full"></i>
+      </div>
+
+      <div class="absolute top-[757px] left-[211px] w-[1021px] font-montserrat font-normal text-white text-[46px] tracking-[2.30px] leading-[75px] opacity-0 animate-fade-in animation-delay-800">
+        <span class="font-semibold tracking-[1.06px]">Date</span>
+        <span class="text-[50px] tracking-[1.25px]"> : </span>
+        <span class="tracking-[1.06px]">23rd November</span>
+      </div>
+
+      <!-- Decorative Image - Bottom Left -->
+      <img
+        class="absolute top-[871px] left-0 w-[346px] h-[279px] object-cover"
+        alt="Decorative frame"
+        src="https://c.animaapp.com/miux0to5c0u75I/img/frame-33679.png"
+      />
+
+      <!-- Empty Glow Effect Container -->
+      <div class="inline-flex items-center justify-center gap-4 absolute top-[721px] left-[162px] glow-effect">
+        <div class="inline-flex items-center justify-center gap-40 relative flex-[0_0_auto]">
+          <div class="relative w-fit mt-[-1.00px] text-shadow-glow font-inter font-normal text-white text-[50px] tracking-[2.50px] leading-[75px]"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
