@@ -3,15 +3,549 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Team 5</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              montserrat: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    
+  <body
+    class="bg-[#0b0f33] text-white font-montserrat leading-normal min-h-screen w-full overflow-x-hidden scroll-smooth"
+  >
+    <main class="flex flex-col gap-10 w-full">
+      <img
+        src="./Assets/ufo.svg"
+        alt="ufo image"
+        class="absolute h-80 ml-auto right-16 top-8 z-30"
+      />
+      <nav class="fixed top-0 left-0 w-full bg-[#0b0f33] shadow-md z-20">
+        <div class="flex items-center px-16 py-6">
+          <img
+            src="./Assets/logo.svg"
+            alt="ESI Astronomy Club Logo"
+            class="h-16"
+          />
+          <ul class="flex text-gray-300 gap-20 text-xl font-medium ml-[25%]">
+            <li class="hover:underline cursor-pointer hover:text-white">
+              <a href="#Home">HOME</a>
+            </li>
+            <li class="hover:underline cursor-pointer hover:text-white">
+              <a href="#About">ABOUT</a>
+            </li>
+            <li class="hover:underline cursor-pointer hover:text-white">
+              <a href="#Program">PROGRAM</a>
+            </li>
+            <li class="hover:underline cursor-pointer hover:text-white">
+              <a href="#Register">REGISTER</a>
+            </li>
+          </ul>
+          <button
+            id="navJoinBtn"
+            class="bg-[#FF8D28] text-black rounded-lg px-6 font-semibold py-2 text-xl opacity-0 transition-opacity duration-300 ml-auto"
+            style="display: none"
+          >
+            Join Us
+          </button>
+        </div>
+      </nav>
+      <section id="Home" class="flex flex-col items-center pt-36">
+        <div class="flex items-center gap-x-40">
+          <img src="./Assets/frame2.svg" alt="frame image" class="h-32 mb-4" />
+          <h1 class="text-5xl font-bold mb-8">Starry Verse</h1>
+          <img src="./Assets/planet.svg" alt="planet image" class="h-32 mb-4" />
+        </div>
+        <p class="text-3xl font-medium mb-2">
+          Join us for a cosmic night of stargazing, discovery, and connection.
+        </p>
+        <div class="flex items-center mt-4 gap-6">
+          <p class="text-xl font-medium">FEBRUARY 20TH, 2026</p>
+          <button
+            class="bg-[#FF8D28] text-black rounded-lg px-4 font-semibold py-2 text-xl"
+          >
+            Join Us
+          </button>
+        </div>
+        <div class="flex gap-x-16 mt-10">
+          <img
+            src="./Assets/frame.svg"
+            alt="cosmic clouds image"
+            class="h-28 mt-48"
+          />
+          <img
+            src="./Assets/telescope.svg"
+            alt="telescope image"
+            class="h-60 mt-16"
+          />
+          <img
+            src="./Assets/frame.svg"
+            alt="cosmic clouds image"
+            class="h-28 mt-48"
+          />
+        </div>
+      </section>
+      <section id="About" class="px-32 pt-36 pb-20">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <h2
+              class="text-4xl underline underline-offset-8 decoration-gray-500 font-semibold mb-4"
+            >
+              About the Event
+            </h2>
+            <p class="text-gray-300 text-xl">
+              Find the answer to your questions!
+            </p>
+          </div>
 
+          <div class="space-y-4">
+            <div class="pb-6">
+              <button
+                onclick="toggleFaq(1)"
+                class="w-full py-4 flex justify-between items-center border-b border-gray-600"
+              >
+                <h3 class="text-2xl font-semibold text-left">
+                  What is the event about?
+                </h3>
+                <svg
+                  id="arrow-1"
+                  class="w-8 h-8 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="faq-1" class="hidden pt-4">
+                <p class="text-lg text-gray-200 leading-relaxed">
+                  Starry Verse is a magical night dedicated to exploring the
+                  beauty of the cosmos. Participants will have the chance to
+                  observe distant stars, planets, and celestial objects using
+                  professional-grade telescopes and astronomical equipment.
+                  Guided by passionate astronomy enthusiasts, you'll learn the
+                  basics of stargazing and discover fascinating facts about the
+                  universe.
+                </p>
+              </div>
+            </div>
 
+            <div class="pb-6">
+              <button
+                onclick="toggleFaq(2)"
+                class="w-full py-4 flex justify-between items-center border-b border-gray-600"
+              >
+                <h3 class="text-2xl font-semibold text-left">
+                  Why is it being organized?
+                </h3>
+                <svg
+                  id="arrow-2"
+                  class="w-8 h-8 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="faq-2" class="hidden pt-4">
+                <p class="text-lg text-gray-200 leading-relaxed">
+                  We all live under the same sky — so why not unite to watch it
+                  together? This event is organized to bring people together
+                  through the shared wonder of astronomy, creating a unique
+                  opportunity to connect with the cosmos and experience the
+                  night sky like never before.
+                </p>
+              </div>
+            </div>
 
+            <div class="pb-6">
+              <button
+                onclick="toggleFaq(3)"
+                class="w-full py-4 flex justify-between items-center border-b border-gray-600"
+              >
+                <h3 class="text-2xl font-semibold text-left">
+                  Who is this event for?
+                </h3>
+                <svg
+                  id="arrow-3"
+                  class="w-8 h-8 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="faq-3" class="hidden pt-4">
+                <p class="text-lg text-gray-200 leading-relaxed">
+                  Whether you're a curious beginner or already interested in
+                  astronomy, this event is for everyone! It's designed for
+                  anyone who wants to explore the beauty of the cosmos and learn
+                  about stargazing, regardless of their experience level.
+                </p>
+              </div>
+            </div>
 
-    
+            <div class="pb-6">
+              <button
+                onclick="toggleFaq(4)"
+                class="w-full py-4 flex justify-between items-center border-b border-gray-600"
+              >
+                <h3 class="text-2xl font-semibold text-left">
+                  What are the event's goals and purpose?
+                </h3>
+                <svg
+                  id="arrow-4"
+                  class="w-8 h-8 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="faq-4" class="hidden pt-4">
+                <p class="text-lg text-gray-200 leading-relaxed">
+                  The event aims to make astronomy accessible to everyone,
+                  foster a sense of community through shared exploration, and
+                  inspire wonder about the universe. We want to help
+                  participants learn the basics of stargazing and develop a
+                  deeper appreciation for the cosmos.
+                </p>
+              </div>
+            </div>
+
+            <div class="pb-6">
+              <button
+                onclick="toggleFaq(5)"
+                class="w-full py-4 flex justify-between items-center border-b border-gray-600"
+              >
+                <h3 class="text-2xl font-semibold text-left">
+                  What can participants expect?
+                </h3>
+                <svg
+                  id="arrow-5"
+                  class="w-8 h-8 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="faq-5" class="hidden pt-4">
+                <p class="text-lg text-gray-200 leading-relaxed">
+                  Come for the view. Stay for the experience. 🌌 Participants
+                  will gain hands-on experience with professional telescopes,
+                  learn to identify celestial objects, understand the basics of
+                  astronomy, and connect with like-minded individuals who share
+                  a passion for the night sky.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="./Assets/ufo.svg"
+          alt="ufo image"
+          class="absolute h-64 left-8 top-[58rem]"
+        />
+        <img
+          src="./Assets/planet.svg"
+          alt="Planet image"
+          class="absolute h-32 right-20 top-[58rem]"
+        />
+      </section>
+
+      <section id="Program" class="px-32 pb-20 pt-36 relative">
+        <div class="max-w-2xl mx-auto">
+          <h2
+            class="text-5xl font-bold text-center mb-12 underline underline-offset-8 decoration-gray-500"
+          >
+            AGENDA
+          </h2>
+
+          <div class="flex items-center justify-center mb-12">
+            <h3 class="text-4xl font-bold mr-6">Saturday</h3>
+            <p class="text-3xl text-gray-300">23rd November</p>
+          </div>
+
+          <div class="space-y-6 max-w-3xl mx-auto">
+            <div
+              class="bg-[#FF8D28] rounded-xl px-8 py-6 flex justify-between items-center"
+            >
+              <span class="text-2xl font-medium text-white">Check_in</span>
+              <span class="text-2xl font-medium text-white">15:00-15:30</span>
+            </div>
+
+            <div
+              class="bg-[#FF8D28] rounded-xl px-8 py-6 flex justify-between items-center"
+            >
+              <span class="text-2xl font-medium text-white"
+                >Telescope Setup & Safety Briefing</span
+              >
+              <span class="text-2xl font-medium text-white">15:30-16:30</span>
+            </div>
+
+            <div
+              class="bg-[#FF8D28] rounded-xl px-8 py-6 flex justify-between items-center"
+            >
+              <span class="text-2xl font-medium text-white"
+                >Open Skywatching</span
+              >
+              <span class="text-2xl font-medium text-white">16:30-18:30</span>
+            </div>
+
+            <div
+              class="bg-[#FF8D28] rounded-xl px-8 py-6 flex justify-between items-center"
+            >
+              <span class="text-2xl font-medium text-white">Dinner</span>
+              <span class="text-2xl font-medium text-white">18:30-19:30</span>
+            </div>
+          </div>
+        </div>
+
+        <img
+          src="./Assets/ufo.svg"
+          alt="UFO"
+          class="absolute left-8 top-32 h-80 opacity-80"
+        />
+        <img
+          src="./Assets/telescope.svg"
+          alt="Telescope"
+          class="absolute right-8 bottom-12 h-48 opacity-80"
+        />
+      </section>
+
+      <section class="px-8 py-20 relative h-[40rem]">
+        <div class="max-w-6xl mx-auto">
+          <h2
+            class="text-5xl font-bold text-center mb-16 underline underline-offset-8 decoration-gray-500"
+          >
+            Our Memories
+          </h2>
+
+          <div class="flex items-center">
+            <!-- Photo Gallery -->
+            <div class="flex items-center justify-center">
+              <img
+                src="./Assets/pic 3.png"
+                alt="Stargazing event memory 3"
+                class="absolute left-0 top-24 w-[30rem] z-10"
+              />
+              <img
+                src="./Assets/pic 2.png"
+                alt="Stargazing event memory 2"
+                class="absolute left-[8rem] top-24 w-[35rem]"
+              />
+              <img
+                src="./Assets/pic 1.png"
+                alt="Stargazing event memory 1"
+                class="absolute top-44 left-[24rem] w-[35rem] z-10"
+              />
+            </div>
+            <img
+              src="./Assets/ufo.svg"
+              alt="UFO"
+              class="absolute h-[23rem] right-[6rem] top-16"
+            />
+            <!-- Right side with UFO and quote -->
+            <div class="absolute right-24 top-40 flex flex-col">
+              <div class="text-right mt-28">
+                <p class="text-xl max-w-[18rem] font-medium italic">
+                  "Aim towards the moon and you might tend on a star or Jupiter"
+                </p>
+              </div>
+              <img
+                src="./Assets/telescope.svg"
+                alt="Telescope"
+                class="h-[19rem] mt-8"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-8 w-full relative my-20">
+        <div class="flex flex-col gap-4 px-32 pt-10">
+          <div class="px-5 max-w-2xl">
+            <h2 class="text-5xl font-semibold mb-8">Location & Date</h2>
+            <p class="text-3xl font-light leading-tight font-montserrat">
+              Reach for the stars with us at Starry Verse — an evening of
+              telescopes, moonlit skies, and cosmic wonder awaits!🌙✨
+            </p>
+            <p class="text-3xl text-[#a0a0a0] mt-[15px] mb-4">
+              <span class="text-4xl text-white font-medium">
+                <img
+                  src="./Assets/location.svg"
+                  alt="location icon"
+                  class="inline h-8 mr-1 mb-1"
+                />
+                Location</span
+              >
+              : Higher School of Computer Science
+            </p>
+            <p class="text-3xl text-[#a0a0a0]">
+              <span class="text-4xl text-white font-medium">
+                <img
+                  src="./Assets/date.svg"
+                  alt="calendar icon"
+                  class="inline h-8 mr-1 mb-1"
+                />
+                Date</span
+              >
+              : 23rd November
+            </p>
+          </div>
+        </div>
+
+        <img
+          src="./Assets/cosmic.svg"
+          alt="Colorful cosmic nebula with stars"
+          class="block h-40 absolute top-[28rem]"
+        />
+
+        <img
+          src="./Assets/telescope.svg"
+          alt="Professional telescope for stargazing"
+          class="block h-40 absolute right-40 top-60 -translate-y-1/2"
+        />
+      </section>
+      <footer class="text-white px-3 mt-48" style="background-color: #0b0f33">
+        <div class="p-12 mx-auto">
+          <div class="flex items-center mb-[60px]">
+            <div>
+              <img
+                src="./Assets/logo.svg"
+                class="w-16 object-contain rounded-ful"
+              />
+            </div>
+
+            <h2 class="flex-1 text-3xl font-bold text-center">
+              Connecting you with the cosmos
+            </h2>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 mb-12">
+            <div class="space-y-2">
+              <h3 class="text-2xl font-semibold">
+                To learn more you can visit our page
+              </h3>
+
+              <div class="flex items-center space-x-3 ml-[105px]">
+                <img
+                  src="./Assets/instagram.svg"
+                  class="h-8 w-8 cursor-pointer"
+                />
+                <span class="text-md cursor-pointer hover:underline"
+                  ><a href="https://www.instagram.com/astrotech_esi" target="_blank">@astrotech_esi</a></span
+                >
+              </div>
+
+              <div class="ml-[105px] flex items-center space-x-3">
+                <img
+                  src="./Assets/facebook.svg"
+                  class="h-8 w-8 cursor-pointer"
+                />
+
+                <span class="text-md cursor-pointer hover:underline"
+                  ><a href="https://www.facebook.com/AstrotechEsi" target="_blank">Astrotech Esi</a></span
+                >
+              </div>
+            </div>
+
+            <div class="space-y-5 md:text-right">
+              <h3 class="text-2xl font-semibold">Contact information</h3>
+
+              <div
+                class="flex items-center justify-center md:justify-end space-x-5 mr-[60px]"
+              >
+                <img src="./Assets/mail.svg" class="h-7 w-7 cursor-pointer" />
+                <span class="text-md cursor-pointer hover:underline"
+                  >astrotech@esi.dz</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center text-md w-full">
+            <div>
+              © 2026 Starry Verse — AstroTech Club. All rights reserved.
+            </div>
+            <div class="flex items-center space-x-5 mr-12">
+              <img src="./Assets/location.svg" class="h-7 w-7" />
+              <span>ESI Algiers, Algeria</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script>
+      function toggleFaq(id) {
+        const faqContent = document.getElementById(`faq-${id}`);
+        const arrow = document.getElementById(`arrow-${id}`);
+
+        if (faqContent.classList.contains("hidden")) {
+          faqContent.classList.remove("hidden");
+          arrow.style.transform = "rotate(180deg)";
+        } else {
+          faqContent.classList.add("hidden");
+          arrow.style.transform = "rotate(0deg)";
+        }
+      }
+
+      window.addEventListener("scroll", function () {
+        const navJoinBtn = document.getElementById("navJoinBtn");
+        if (window.scrollY > 280) {
+          navJoinBtn.style.display = "block";
+          setTimeout(() => {
+            navJoinBtn.style.opacity = "1";
+          }, 10);
+        } else {
+          navJoinBtn.style.opacity = "0";
+          setTimeout(() => {
+            navJoinBtn.style.display = "none";
+          }, 300);
+        }
+      });
+    </script>
   </body>
 </html>
