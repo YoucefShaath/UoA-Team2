@@ -1,0 +1,143 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./output.css" rel="stylesheet">
+
+    <style>
+      .input-group {
+            position: relative;   
+        }
+        
+        .input-group input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #6b7280;
+            color: white;
+            padding: 1.5rem 2.5rem 0.75rem 0;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus {
+            border-bottom-color: #d1d5db;
+        }
+        
+        .input-group label {
+            position: absolute;
+            font-size: 18px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #F2E1F7;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+        
+       .input-group input:focus + label, 
+        .input-group input:not(:placeholder-shown) + label {
+            top: 0.5rem;
+            font-size: 0.9rem;
+            color: #F2E1F7;
+        }
+    </style>
+   
+  </head>
+  <body class="min-h-screen overflow-hidden m-0 p-0">
+
+    <!--This is the container-->
+
+    <div class="relative w-screen h-screen flex m-0 p-0 items-center justify-center" style="background-color: #0B0F33">
+
+      <img src="cloude1.png" class="absolute bottom-[-12px] left-0 w-[200px] h-[200px] object-contain">
+
+      <img src="cloude2.png" class="absolute bottom-[-40px] w-[200px] h-[200px] left-[180px] object-contain">
+
+      <img src="telescope.png" class="absolute bottom-0 right-[10px] w-[150px] h-[200px] object-contain">
+
+      <img src="cloude2.png" class="absolute bottom-[-40px] right-[20%]
+      object-contain w-[200px] h-[200px]">
+
+
+      <!--This is the div that contains the form-->
+
+      <div class="relative z-10 w-[400px] bg-gradient-to-b from-[#222940] to-[#1f2437] rounded-2xl shadow-2xl p-8">
+
+        
+        
+        <button class="absolute top-4 right-4 w-8 h-8 flex  justify-center text-white hover:bg-white/10 rounded-lg transition-colors">
+          <span class="text-xl font-semibold ">x</span>
+        </button>
+
+        <h2 class="text-[#FFF1DE] text-2xl font-bold text-center mb-8 tracking-wide">REGISTRATION</h2>
+
+
+        <form action="#" class="space-y-6">
+
+          <div class="input-group">
+                    <input 
+                        type="text" 
+                        placeholder=" "
+                        required
+                    >
+                    <label>Full Name</label>
+                    <img src="smileface.png"  class="absolute top-[20px] right-[20px] object-contain  w-7 h-7">
+                </div>
+
+                <!-- Email Address Field -->
+                <div class="input-group">
+                    <input 
+                        type="email" 
+                        placeholder=" "
+                        required
+                    >
+                    <label>Email Address</label>
+                    <img src="Icon.png"  class="absolute top-[20px] right-[20px] object-contain  w-6 h-6">
+                </div>
+
+                <!-- Phone Number Field -->
+                <div class="input-group" style="margin-bottom: 150px;">
+                    <input 
+                        type="tel" 
+                        placeholder=" "
+                        required
+                    >
+                    <label>Phone Number</label>
+                   <img src="phone.png"  class="absolute top-[20px] right-[20px] object-contain  w-6 h-6">
+                </div>
+
+          <!--This div will contain the buttons-->
+
+          <div class="flex items-center justify-center gap-8 ">
+
+            <button class="text-[#EE895D] hover:text-[#eba587] transition-colors text-[18px] tracking-wide font-medium underline">cancel</button>
+
+            <button type="submit" class="bg-[#EE895D] text-white rounded-2xl font-medium py-2 px-5 hover:bg-[#eb7543] transition-colors ">
+
+              Complete Registration
+
+            </button>
+
+          </div>
+
+
+        </form>
+
+        
+
+      </div>
+
+
+    </div>
+
+    
+   
+       
+  </body>
+</html>
