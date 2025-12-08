@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <title>Starry Verse</title>
-    <link rel="icon" href="./Assets/logo.svg">
+    <link rel="icon" href="./Assets/logo.svg" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -23,6 +23,97 @@
         },
       };
     </script>
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      .animate-fadeInUp {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      .animate-fadeIn {
+        animation: fadeIn 1s ease-out forwards;
+      }
+      .animate-slideInLeft {
+        animation: slideInLeft 0.8s ease-out forwards;
+      }
+      .animate-slideInRight {
+        animation: slideInRight 0.8s ease-out forwards;
+      }
+      .animate-pulse-slow {
+        animation: pulse 2s ease-in-out infinite;
+      }
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+      .delay-400 {
+        animation-delay: 0.4s;
+      }
+      .delay-500 {
+        animation-delay: 0.5s;
+      }
+    </style>
   </head>
   <body
     class="bg-[#0b0f33] text-white font-montserrat leading-normal min-h-screen w-full overflow-x-hidden scroll-smooth"
@@ -31,7 +122,7 @@
       <img
         src="./Assets/ufo.svg"
         alt="ufo image"
-        class="absolute h-80 ml-auto right-16 top-8 z-30"
+        class="absolute h-80 ml-auto right-16 top-8 z-30 animate-float"
       />
       <nav class="fixed top-0 left-0 w-full bg-[#0b0f33] shadow-md z-20">
         <div class="flex items-center px-16 py-6">
@@ -41,16 +132,24 @@
             class="h-16"
           />
           <ul class="flex text-gray-300 gap-20 text-xl font-medium ml-[25%]">
-            <li class="hover:underline cursor-pointer hover:text-white">
+            <li
+              class="hover:underline cursor-pointer hover:text-white transition-all duration-300 hover:scale-110"
+            >
               <a href="#Home">HOME</a>
             </li>
-            <li class="hover:underline cursor-pointer hover:text-white">
+            <li
+              class="hover:underline cursor-pointer hover:text-white transition-all duration-300 hover:scale-110"
+            >
               <a href="#About">ABOUT</a>
             </li>
-            <li class="hover:underline cursor-pointer hover:text-white">
+            <li
+              class="hover:underline cursor-pointer hover:text-white transition-all duration-300 hover:scale-110"
+            >
               <a href="#Program">PROGRAM</a>
             </li>
-            <li class="hover:underline cursor-pointer hover:text-white">
+            <li
+              class="hover:underline cursor-pointer hover:text-white transition-all duration-300 hover:scale-110"
+            >
               <a href="./registration.html">REGISTER</a>
             </li>
           </ul>
@@ -59,29 +158,34 @@
             class="bg-[#FF8D28] text-black rounded-lg px-6 font-semibold py-2 text-xl opacity-0 transition-opacity duration-300 ml-auto"
             style="display: none"
           >
-          <a href="./registration.html">
-            Join Us
-            </a>
+            <a href="./registration.html"> Join Us </a>
           </button>
         </div>
       </nav>
       <section id="Home" class="flex flex-col items-center pt-36">
         <div class="flex items-center gap-x-40">
-          <img src="./Assets/frame2.svg" alt="frame image" class="h-32 mb-4" />
-          <h1 class="text-5xl font-bold mb-8">Starry Verse</h1>
-          <img src="./Assets/planet.svg" alt="planet image" class="h-32 mb-4" />
+          <img
+            src="./Assets/frame2.svg"
+            alt="frame image"
+            class="h-32 mb-4 animate-float"
+          />
+          <h1 class="text-5xl font-bold mb-8 animate-fadeInUp">Starry Verse</h1>
+          <img
+            src="./Assets/planet.svg"
+            alt="planet image"
+            class="h-32 mb-4 animate-float"
+            style="animation-delay: 0.5s"
+          />
         </div>
-        <p class="text-3xl font-medium mb-2">
+        <p class="text-3xl font-medium mb-2 animate-fadeInUp delay-200">
           Join us for a cosmic night of stargazing, discovery, and connection.
         </p>
-        <div class="flex items-center mt-4 gap-6">
+        <div class="flex items-center mt-4 gap-6 animate-fadeInUp delay-300">
           <p class="text-xl font-medium">FEBRUARY 20TH, 2026</p>
           <button
-            class="bg-[#FF8D28] text-black rounded-lg px-4 font-semibold py-2 text-xl"
+            class="bg-[#FF8D28] text-black rounded-lg px-4 font-semibold py-2 text-xl hover:scale-105 transition-transform duration-300"
           >
-          <a href="./registration.html">
-            Join Us
-            </a>
+            <a href="./registration.html"> Join Us </a>
           </button>
         </div>
         <div class="flex gap-x-16 mt-10">
@@ -558,6 +662,32 @@
             navJoinBtn.style.display = "none";
           }, 300);
         }
+      });
+
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fadeInUp");
+          }
+        });
+      }, observerOptions);
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+          const children = section.querySelectorAll(
+            "h2, h3, p, .input-group, button, img"
+          );
+          children.forEach((child, index) => {
+            child.style.opacity = "0";
+            observer.observe(child);
+          });
+        });
       });
     </script>
   </body>
