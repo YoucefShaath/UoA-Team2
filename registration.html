@@ -44,42 +44,53 @@
         font-size: 0.9rem;
         color: #f2e1f7;
       }
+      
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .input-group label {
+          font-size: 16px;
+        }
+        .input-group input:focus + label,
+        .input-group input:not(:placeholder-shown) + label {
+          font-size: 0.8rem;
+        }
+      }
     </style>
   </head>
   <body class="min-h-screen overflow-hidden m-0 p-0">
-    <div class="relative w-screen h-screen flex m-0 p-0 items-center justify-center" style="background-color: #0b0f33">
-      <img src="./Assets/cloud.svg" class="absolute bottom-[-12px] left-0 w-[200px] h-[200px] object-contain" />
-      <img src="./Assets/cosmic.svg" class="absolute bottom-[-40px] w-[200px] h-[200px] left-[180px] object-contain" />
-      <img src="./Assets/telescope.svg" class="absolute bottom-0 right-[10px] w-[150px] h-[200px] object-contain" />
-      <img src="./Assets/cosmic.svg" class="absolute bottom-[-40px] right-[20%] object-contain w-[200px] h-[200px]" />
-      <div class="relative z-10 w-[400px] bg-gradient-to-b from-[#222940] to-[#1f2437] rounded-2xl shadow-2xl p-8">
-        <button onclick="window.location.href='index.html'" class="absolute top-4 right-4 w-8 h-8 flex justify-center text-white hover:bg-white/10 rounded-lg transition-colors">
+    <div class="relative w-screen h-screen flex m-0 p-0 items-center justify-center px-4" style="background-color: #0b0f33">
+      <img src="./Assets/cloud.svg" class="hidden md:block absolute bottom-[-12px] left-0 w-[150px] md:w-[200px] h-[150px] md:h-[200px] object-contain" />
+      <img src="./Assets/cosmic.svg" class="hidden md:block absolute bottom-[-40px] w-[150px] md:w-[200px] h-[150px] md:h-[200px] left-[120px] md:left-[180px] object-contain" />
+      <img src="./Assets/telescope.svg" class="hidden md:block absolute bottom-0 right-[10px] w-[120px] md:w-[150px] h-[150px] md:h-[200px] object-contain" />
+      <img src="./Assets/cosmic.svg" class="hidden lg:block absolute bottom-[-40px] right-[20%] object-contain w-[150px] md:w-[200px] h-[150px] md:h-[200px]" />
+      <div class="relative z-10 w-full max-w-[400px] bg-gradient-to-b from-[#222940] to-[#1f2437] rounded-2xl shadow-2xl p-6 md:p-8">
+        <button onclick="window.location.href='index.html'" class="absolute top-3 right-3 md:top-4 md:right-4 w-8 h-8 flex justify-center items-center text-white hover:bg-white/10 rounded-lg transition-colors">
           <span class="text-xl font-semibold">x</span>
         </button>
-        <h2 class="text-[#FFF1DE] text-2xl font-bold text-center mb-8 tracking-wide">REGISTRATION</h2>
-        <form action="#" class="space-y-6">
-          <div class="mb-16">
+        <h2 class="text-[#FFF1DE] text-xl md:text-2xl font-bold text-center mb-6 md:mb-8 tracking-wide">REGISTRATION</h2>
+        <form action="#" class="space-y-4 md:space-y-6">
+          <div class="mb-12 md:mb-16">
             <div class="input-group">
               <input type="text" placeholder=" " required />
               <label>Full Name</label>
-              <img src="./Assets/face.svg" class="absolute top-[20px] right-[20px] object-contain w-7 h-7" />
+              <img src="./Assets/face.svg" class="absolute top-[20px] right-[10px] md:right-[20px] object-contain w-6 h-6 md:w-7 md:h-7" />
             </div>
             <div class="input-group">
               <input type="email" placeholder=" " required />
               <label>Email Address</label>
-              <img src="./Assets/mail.svg" class="absolute top-[20px] right-[20px] object-contain w-6 h-6" />
+              <img src="./Assets/mail.svg" class="absolute top-[20px] right-[10px] md:right-[20px] object-contain w-5 h-5 md:w-6 md:h-6" />
             </div>
             <div class="input-group">
               <input type="tel" placeholder=" " required />
               <label>Phone Number</label>
-              <img src="./Assets/phone.svg" class="absolute top-[20px] right-[20px] object-contain w-6 h-6" />
+              <img src="./Assets/phone.svg" class="absolute top-[20px] right-[10px] md:right-[20px] object-contain w-5 h-5 md:w-6 md:h-6" />
             </div>
           </div>
-          <div class="flex items-center justify-center gap-6">
-            <button type="button" onclick="window.location.href='index.html'" class="text-white bg-red-600 transition-colors text-lg px-4 py-2 rounded-xl tracking-wide font-medium hover:bg-red-700">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
+            <button type="button" onclick="window.location.href='index.html'" class="w-full sm:w-auto text-white bg-red-600 transition-colors text-base md:text-lg px-4 py-2 rounded-xl tracking-wide font-medium hover:bg-red-700">
               cancel
             </button>
-            <button type="submit" onclick="handleRegistration(event)" class="bg-[#FF8D28] text-white text-lg rounded-xl font-medium py-2 px-5 hover:bg-orange-500 transition-colors">
+            <button type="submit" onclick="handleRegistration(event)" class="w-full sm:w-auto bg-[#FF8D28] text-white text-base md:text-lg rounded-xl font-medium py-2 px-5 hover:bg-orange-500 transition-colors">
               Complete Registration
             </button>
           </div>
