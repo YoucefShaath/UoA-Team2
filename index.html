@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -115,6 +115,16 @@
       }
 
       /* Responsive Styles */
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
       @media (max-width: 1024px) {
         .mobile-menu {
           display: none;
@@ -128,7 +138,7 @@
   <body
     class="bg-[#0b0f33] text-white font-montserrat leading-normal min-h-screen w-full overflow-x-hidden scroll-smooth"
   >
-    <main class="flex flex-col gap-10 w-full">
+    <main class="flex flex-col gap-10 w-full overflow-x-hidden">
       <img
         src="./Assets/ufo.svg"
         alt="ufo image"
@@ -222,7 +232,7 @@
           <img
             src="./Assets/frame2.svg"
             alt="frame image"
-            class="h-16 md:h-24 lg:h-32 mb-4 animate-float"
+            class="h-12 md:h-24 lg:h-32 mb-4 animate-float"
           />
           <h1
             class="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 animate-fadeInUp text-center"
@@ -232,7 +242,7 @@
           <img
             src="./Assets/planet.svg"
             alt="planet image"
-            class="h-16 md:h-24 lg:h-32 mb-4 animate-float"
+            class="h-12 md:h-24 lg:h-32 mb-4 animate-float"
             style="animation-delay: 0.5s"
           />
         </div>
@@ -272,7 +282,7 @@
         </div>
       </section>
       <section id="About" class="px-4 md:px-16 lg:px-32 pt-28 md:pt-36 pb-20">
-        <div class="max-w-5xl mx-auto">
+        <div class="mx-auto">
           <div class="text-center mb-12">
             <h2
               class="text-2xl md:text-3xl lg:text-4xl underline underline-offset-8 decoration-gray-500 font-semibold mb-4"
@@ -284,7 +294,7 @@
             </p>
           </div>
 
-          <div class="space-y-4">
+          <div class="space-y-4 max-w-4xl mx-auto">
             <div class="pb-6">
               <button
                 onclick="toggleFaq(1)"
@@ -480,7 +490,7 @@
         <img
           src="./Assets/ufo.svg"
           alt="ufo image"
-          class="hidden md:block absolute h-48 md:h-64 left-4 md:left-8 top-[58rem]"
+          class="hidden md:block absolute h-48 md:h-64 left-4 md:left-8 top-[58rem] animate-float"
         />
         <img
           src="./Assets/planet.svg"
@@ -493,7 +503,7 @@
         id="Program"
         class="px-4 md:px-16 lg:px-32 pb-20 pt-28 md:pt-36 relative"
       >
-        <div class="max-w-2xl mx-auto">
+        <div class="mx-auto">
           <h2
             class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-12 underline underline-offset-8 decoration-gray-500"
           >
@@ -527,7 +537,7 @@
               class="bg-[#FF8D28] rounded-xl px-4 md:px-6 lg:px-8 py-4 md:py-6 flex justify-between items-center gap-4"
             >
               <span
-                class="text-base md:text-xl lg:text-2xl font-medium text-white"
+                class="text-sm md:text-xl lg:text-2xl font-medium text-white"
                 >Telescope Setup & Safety Briefing</span
               >
               <span
@@ -567,7 +577,7 @@
         <img
           src="./Assets/ufo.svg"
           alt="UFO"
-          class="hidden lg:block absolute left-8 top-32 h-80 opacity-80"
+          class="hidden lg:block absolute left-8 top-32 h-80 opacity-80 animate-float"
         />
         <img
           src="./Assets/telescope.svg"
@@ -576,7 +586,9 @@
         />
       </section>
 
-      <section class="px-4 md:px-8 py-12 md:py-20 relative overflow-hidden">
+      <section
+        class="px-4 md:px-8 py-12 md:py-20 relative overflow-hidden w-full min-h-[40rem]"
+      >
         <div class="max-w-6xl mx-auto">
           <h2
             class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-16 underline underline-offset-8 decoration-gray-500"
@@ -584,57 +596,97 @@
             Our Memories
           </h2>
 
-          <!-- Photo Gallery - Responsive overlapping layout -->
-          <div
-            class="relative h-[28rem] md:h-[38rem] lg:h-[45rem] mb-8 flex justify-center"
-          >
+          <!-- Mobile/Tablet Layout (< 1024px) -->
+          <div class="lg:hidden">
+            <!-- Photo Gallery - Mobile Optimized -->
             <div
-              class="relative w-full md:max-w-[85%] lg:max-w-[80%] flex items-center justify-center"
+              class="relative h-[28rem] md:h-[38rem] mb-8 flex justify-center overflow-hidden w-full"
             >
+              <div
+                class="relative w-full md:max-w-[85%] flex items-center justify-center"
+              >
+                <img
+                  src="./Assets/pic 3.png"
+                  alt="Stargazing event memory 3"
+                  class="absolute left-0 top-8 w-[15rem] md:w-[24rem] z-10"
+                />
+                <img
+                  src="./Assets/pic 2.png"
+                  alt="Stargazing event memory 2"
+                  class="absolute left-[5rem] md:left-[6rem] top-8 w-[17rem] md:w-[28rem]"
+                />
+                <img
+                  src="./Assets/pic 1.png"
+                  alt="Stargazing event memory 1"
+                  class="absolute top-16 md:top-28 left-[12rem] md:left-[19rem] w-[17rem] md:w-[28rem] z-10"
+                />
+              </div>
+            </div>
+
+            <!-- Mobile Decorations (Below Photos) -->
+            <div
+              class="flex flex-col md:flex-row justify-center items-center md:gap-12 -mt-8"
+            >
+              <div class="flex flex-col items-center">
+                <img
+                  src="./Assets/ufo.svg"
+                  alt="UFO"
+                  class="h-[15rem] md:h-[16rem] animate-float"
+                />
+                <div class="text-center">
+                  <p
+                    class="text-lg -mt-20 mb-12 md:text-base max-w-[15rem] md:max-w-[18rem] font-medium italic"
+                  >
+                    "Aim towards the moon and you might land on a star or
+                    Jupiter"
+                  </p>
+                </div>
+              </div>
+              <div class="flex justify-center">
+                <img
+                  src="./Assets/telescope.svg"
+                  alt="Telescope"
+                  class="h-[12rem] md:h-[16rem]"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop Layout (>= 1024px) - User Provided Structure -->
+          <div class="hidden lg:block relative bottom-48 h-[28rem]">
+            <div class="flex items-center justify-center">
               <img
                 src="./Assets/pic 3.png"
                 alt="Stargazing event memory 3"
-                class="absolute -left-4 top-8 lg:top-20 w-[17rem] md:w-[24rem] lg:w-[35rem] z-10"
+                class="absolute -left-48 top-24 w-[30rem] z-10"
               />
               <img
                 src="./Assets/pic 2.png"
                 alt="Stargazing event memory 2"
-                class="absolute left-[3rem] md:left-[6rem] lg:left-[10rem] top-8 lg:top-20 w-[20rem] md:w-[28rem] lg:w-[40rem]"
+                class="absolute -left-16 top-24 w-[35rem]"
               />
               <img
                 src="./Assets/pic 1.png"
                 alt="Stargazing event memory 1"
-                class="absolute top-16 md:top-28 lg:top-40 left-[10rem] md:left-[19rem] lg:left-[28rem] w-[20rem] md:w-[28rem] lg:w-[40rem] z-10"
+                class="absolute top-44 left-[12rem] w-[35rem] z-10"
               />
             </div>
-          </div>
-
-          <!-- UFO, Quote and Telescope Below Photos -->
-          <div
-            class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 lg:gap-16 mt-8"
-          >
-            <!-- UFO -->
-            <div class="flex flex-col items-center">
-              <img
-                src="./Assets/ufo.svg"
-                alt="UFO"
-                class="h-[12rem] md:h-[16rem] lg:h-[20rem] mb-4"
-              />
-              <div class="text-center">
-                <p
-                  class="text-sm md:text-base lg:text-xl max-w-[15rem] md:max-w-[18rem] font-medium italic"
-                >
+            <img
+              src="./Assets/ufo.svg"
+              alt="UFO"
+              class="absolute h-[23rem] -right-[8rem] top-28 animate-float"
+            />
+            <!-- Right side with UFO and quote -->
+            <div class="absolute -right-32 top-56 flex flex-col">
+              <div class="text-right mt-28">
+                <p class="text-xl max-w-[18rem] font-medium italic">
                   "Aim towards the moon and you might land on a star or Jupiter"
                 </p>
               </div>
-            </div>
-
-            <!-- Telescope -->
-            <div class="flex justify-center">
               <img
                 src="./Assets/telescope.svg"
                 alt="Telescope"
-                class="h-[12rem] md:h-[16rem] lg:h-[19rem]"
+                class="h-[15rem] mt-8"
               />
             </div>
           </div>
@@ -645,18 +697,18 @@
         <div class="flex flex-col gap-4 px-4 md:px-16 lg:px-32 pt-10">
           <div class="px-2 md:px-5 max-w-2xl">
             <h2
-              class="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 md:mb-8"
+              class="text-3xl text-center md:text-left md:text-4xl lg:text-5xl font-semibold mb-6 md:mb-8"
             >
               Location & Date
             </h2>
             <p
-              class="text-lg md:text-2xl lg:text-3xl font-light leading-tight font-montserrat"
+              class="text-lg text-center md:text-left md:text-2xl lg:text-3xl font-light leading-tight font-montserrat"
             >
               Reach for the stars with us at Starry Verse — an evening of
               telescopes, moonlit skies, and cosmic wonder awaits!🌙✨
             </p>
             <p
-              class="text-lg md:text-2xl lg:text-3xl text-[#a0a0a0] mt-[15px] mb-4"
+              class="text-lg text-center md:text-left md:text-2xl lg:text-3xl text-[#a0a0a0] mt-[15px] mb-4"
             >
               <span
                 class="text-xl md:text-3xl lg:text-4xl text-white font-medium"
@@ -670,7 +722,9 @@
               >
               : Higher School of Computer Science
             </p>
-            <p class="text-lg md:text-2xl lg:text-3xl text-[#a0a0a0]">
+            <p
+              class="text-lg text-center md:text-left md:text-2xl lg:text-3xl text-[#a0a0a0]"
+            >
               <span
                 class="text-xl md:text-3xl lg:text-4xl text-white font-medium"
               >
@@ -862,6 +916,11 @@
             "h2, h3, p, .input-group, button, img"
           );
           children.forEach((child, index) => {
+            if (
+              child.tagName === "IMG" &&
+              child.getAttribute("src").includes("ufo.svg")
+            )
+              return;
             child.style.opacity = "0";
             observer.observe(child);
           });
